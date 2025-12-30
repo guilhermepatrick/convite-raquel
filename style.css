@@ -141,6 +141,14 @@ h1 {
     background: rgba(6, 68, 32, 0.05);
 }
 
+/* Faz o botão poder se mover suavemente */
+#btn-nao-direto {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico */
+    position: relative;
+    width: 100%; /* Mantém a largura original */
+    display: block;
+}
+
 @keyframes nadar { from { left: -100px; } to { left: 110vw; } }
 @keyframes fadeBalao { 0%, 40% { opacity: 0; } 45%, 55% { opacity: 1; } 60%, 100% { opacity: 0; } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

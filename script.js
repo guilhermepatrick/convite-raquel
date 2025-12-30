@@ -68,10 +68,43 @@ btnQueroSaber.addEventListener('click', () => {
     revelacao.classList.remove('hidden');
 });
 
-btnNaoDireto.addEventListener('click', () => {
-    const tel = "5531985230304";
-    const msg = encodeURIComponent("ai desculpa kkkk pode encerrar aq ent n precisa render mais msm");
-    window.location.href = `https://wa.me/${tel}?text=${msg}`;
+let estagioNao = 0;
+
+btnNaoDireto.addEventListener('click', (e) => {
+    estagioNao++;
+
+    if (estagioNao === 1) {
+        // Estágio 1: O botão desliza para um lado aleatório
+        btnNaoDireto.innerText = "Porra, tem certeza? 🤨";
+        
+        // Calcula um deslocamento relativo à posição atual
+        // Para não sumir da tela, limitamos o movimento
+        const moveX = Math.random() > 0.5 ? 50 : -50; // Move 50px pro lado
+        const moveY = Math.random() > 0.5 ? -80 : -150; // Sobe um pouco
+        
+        btnNaoDireto.style.transform = `translate(${moveX}px, ${moveY}px)`;
+
+    } else if (estagioNao === 2) {
+        // Estágio 2: O botão volta para o lugar original com o texto de "rendição"
+        btnNaoDireto.innerText = "Vou te deixar de xereca msm 🐸";
+        const moveX = Math.random() > 0.5 ? 50 : -50; // Move 50px pro lado
+        const moveY = Math.random() > 0.5 ? -80 : -150; // Sobe um pouco
+        btnNaoDireto.style.transform = `translate(${moveX}px, ${moveY}px)`;
+
+            } else if (estagioNao === 3) {
+        // Estágio 2: O botão volta para o lugar original com o texto de "rendição"
+        btnNaoDireto.style.transform = `translate(0, 0)`;
+        btnNaoDireto.innerText = "Blz, eu aceito (final) 🙄";
+        
+        // Mantém a cor original de "botão cinza" para não confundir com o sim
+        btnNaoDireto.style.backgroundColor = "var(--cinza-botao)";
+
+    } else {
+        // Estágio 3: O clique final que leva para o WhatsApp de negação
+        const tel = "5531985230304";
+        const msgEncerramento = encodeURIComponent("tá, você me venceu no cansaço com esse botão fugindo kkkkk mas vamos encerrar por aqui mesmo!");
+        window.location.href = `https://wa.me/${tel}?text=${msgEncerramento}`;
+    }
 });
 
 btnWhats.addEventListener('click', () => {
@@ -96,4 +129,7 @@ btnVoltarFotos.addEventListener('click', () => {
     // Se quiser que ela volte exatamente para a última foto:
     slideAtual = slides.length - 9;
     atualizarSlides();
+
+    
 });
+
