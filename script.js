@@ -79,3 +79,21 @@ btnWhats.addEventListener('click', () => {
     const msg = `ai mds kfkfjdjd\nsem kere\nia manda oi\nmdkdkdkdkd`;
     window.location.href = `https://wa.me/${tel}?text=${encodeURIComponent(msg)}`;
 });
+
+// Localize onde estão suas variáveis e adicione:
+const btnVoltarFotos = document.getElementById('btn-voltar-fotos');
+
+// Adicione este evento no final do arquivo:
+btnVoltarFotos.addEventListener('click', () => {
+    // Esconde a finalização
+    finalizacao.classList.add('hidden');
+    finalizacao.classList.remove('show');
+    
+    // Volta para o carrossel
+    secaoCarrossel.classList.remove('hidden');
+    
+    // Opcional: Reseta para a última foto ou primeira
+    // Se quiser que ela volte exatamente para a última foto:
+    slideAtual = slides.length - 9;
+    atualizarSlides();
+});

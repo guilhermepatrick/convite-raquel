@@ -124,6 +124,22 @@ h1 {
     opacity: 0; 
     animation: fadeBalao 12s linear infinite; 
 }
+.btn-rever {
+    background: transparent;
+    border: 1px solid var(--verde-amazonia);
+    color: var(--verde-amazonia);
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-rever:hover {
+    background: rgba(6, 68, 32, 0.05);
+}
 
 @keyframes nadar { from { left: -100px; } to { left: 110vw; } }
 @keyframes fadeBalao { 0%, 40% { opacity: 0; } 45%, 55% { opacity: 1; } 60%, 100% { opacity: 0; } }
