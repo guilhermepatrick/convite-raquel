@@ -3,6 +3,7 @@ const btnVerFotos = document.getElementById('btn-ver-fotos');
 const secaoCarrossel = document.getElementById('secao-carrossel');
 const intro = document.getElementById('intro');
 const finalizacao = document.getElementById('finalizacao');
+const peixe = document.getElementById('peixe-container');
 
 // Controle do Carrossel
 const btnAnterior = document.getElementById('btn-anterior');
@@ -28,6 +29,7 @@ function atualizarSlides() {
 
 btnVerFotos.addEventListener('click', () => {
     intro.classList.add('hidden');
+    peixe.style.display = 'none';
     secaoCarrossel.classList.remove('hidden');
     atualizarSlides();
 });
