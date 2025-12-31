@@ -102,7 +102,7 @@ h1 {
 .btn-whatsapp::after { content: "HUMILDE"; }
 
 #btn-anterior { flex: 1; display: none; }
-#btn-proximo { flex: 2; }
+#btn-proximo { flex: 1; }
 
 .hidden { display: none; }
 .show { display: block !important; }

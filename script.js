@@ -94,7 +94,7 @@ btnNaoDireto.addEventListener('click', (e) => {
             } else if (estagioNao === 3) {
         // Estágio 2: O botão volta para o lugar original com o texto de "rendição"
         btnNaoDireto.style.transform = `translate(0, 0)`;
-        btnNaoDireto.innerText = "Blz, eu aceito (final) 🙄";
+        btnNaoDireto.innerText = "Blz, eu aceito a derrota 😔";
         
         // Mantém a cor original de "botão cinza" para não confundir com o sim
         btnNaoDireto.style.backgroundColor = "var(--cinza-botao)";
