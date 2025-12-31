@@ -180,6 +180,14 @@ h1 {
     display: block;
 }
 
+#img-click{
+width: 100%;
+margin-top: 2rem;
+
+
+}
+
+
 @keyframes nadar { from { left: -100px; } to { left: 110vw; } }
 @keyframes fadeBalao { 0%, 40% { opacity: 0; } 45%, 55% { opacity: 1; } 60%, 100% { opacity: 0; } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

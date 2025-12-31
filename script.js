@@ -131,7 +131,5 @@ btnVoltarFotos.addEventListener('click', () => {
     // Se quiser que ela volte exatamente para a última foto:
     slideAtual = slides.length - 9;
     atualizarSlides();
-
-    
 });
 
