@@ -21,7 +21,7 @@ function atualizarSlides() {
 
     // Texto do botão Próximo no último slide
     if (slideAtual === slides.length - 1) {
-        btnProximo.innerText = "Continuar para o final ✨";
+        btnProximo.innerText = "Continuar ✨";
     } else {
         btnProximo.innerText = ">";
     }
@@ -51,6 +51,18 @@ btnAnterior.addEventListener('click', () => {
         atualizarSlides();
     }
 });
+
+function voltarParaInicio() {
+    // Esconde a seção do carrossel
+    document.getElementById('secao-carrossel').classList.add('hidden');
+    
+    // Mostra a seção de introdução novamente
+    document.getElementById('intro').classList.remove('hidden');
+    
+    // Opcional: Reseta o carrossel para o primeiro slide para a próxima vez
+    currentSlide = 0;
+    mostrarSlide(currentSlide);
+}
 
 // Ações Finais
 const btnQueroSaber = document.getElementById('btn-quero-saber');

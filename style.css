@@ -75,14 +75,15 @@ h1 {
     object-fit: cover; /* Garante que a foto apareça inteira */
 }
 
-.horario { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
-.legenda { font-size: 0.9rem; font-style: italic; color: var(--verde-amazonia); min-height: 50px; padding: 0 10px; }
+.horario { font-size: 1.2rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+.legenda { font-size: 1.0rem; font-style: italic; color: var(--verde-amazonia); min-height: 50px; padding: 0 10px; }
 
 /* Botões */
 .controles-carrossel {
     display: flex;
     gap: 10px;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .btn-sim, .btn-padrao, .btn-whatsapp {
@@ -120,7 +121,9 @@ h1 {
 .peixe { 
     position: absolute; 
     font-size: 1.5rem; 
-    /* Aplica as duas animações: nadar (horizontal) e onda (vertical) */
+    /* Adicionamos o "scaleX(-1)" para espelhar o peixe horizontalmente */
+    transform: scaleX(-1); 
+    /* Aplicamos as animações. Note que a animação 'onda' agora precisa preservar o espelhamento */
     animation: nadar 12s linear infinite, onda 3s ease-in-out infinite; 
 }
 
@@ -136,18 +139,19 @@ h1 {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     opacity: 0; 
     animation: fadeBalao 12s linear infinite; 
+    transform: scaleX(-1);
 }
 
 /* Animação Horizontal */
 @keyframes nadar { 
-    from { left: -100px; } 
-    to { left: 110vw; } 
+    from { left: 110vw; } /* Começa fora da tela na direita */
+    to { left: -100px; }  /* Termina fora da tela na esquerda */
 }
 
 /* Animação de Onda (Vertical) */
 @keyframes onda {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-30px); } /* O quanto ele sobe e desce */
+    0%, 100% { transform: scaleX(-1) translateY(0); }
+    50% { transform: scaleX(-1) translateY(-30px); }
 }
 
 @keyframes fadeBalao { 
@@ -183,8 +187,18 @@ h1 {
 #img-click{
 width: 100%;
 margin-top: 2rem;
-
-
+}
+.btn-voltar-inicio {
+    background-color: var(--verde-amazonia); color: white;
+    width: 50%;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s;
+    flex-basis: 100%
 }
 
 
